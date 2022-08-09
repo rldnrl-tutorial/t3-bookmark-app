@@ -9,7 +9,7 @@ type CardProps = {
 }
 
 function Card({ children }: CardProps) {
-  return children
+  return <li className="shadow max-w-md rounded">{children}</li>
 }
 
 export default Object.assign(Card, {
