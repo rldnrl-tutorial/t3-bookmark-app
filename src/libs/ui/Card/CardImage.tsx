@@ -1,10 +1,10 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 type CardImageProps = {
-  src: string;
-  alt?: string;
-};
+  src: string
+  alt?: string
+}
 
 export default function CardImage(props: CardImageProps) {
   return (
@@ -17,5 +17,5 @@ export default function CardImage(props: CardImageProps) {
         className="rounded"
       />
     </div>
-  );
+  )
 }

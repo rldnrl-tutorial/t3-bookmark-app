@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react'
 
 type CardDetailProps = {
-  children?: ReactNode;
-};
+  children?: ReactNode
+}
 
 export default function CardDetail({ children }: CardDetailProps) {
-  return <p className="text-gray-600">{children}</p>;
+  return <p className="text-gray-600">{children}</p>
 }

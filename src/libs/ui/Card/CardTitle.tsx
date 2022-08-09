@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react'
 
 type CardTitleProps = {
-  children?: ReactNode;
-};
+  children?: ReactNode
+}
 
 export default function CardTitle({ children }: CardTitleProps) {
-  return <p className="text-lg font-medium">{children}</p>;
+  return <p className="text-lg font-medium">{children}</p>
 }

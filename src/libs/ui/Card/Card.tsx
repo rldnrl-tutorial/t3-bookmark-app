@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
-import CardCategory from "./CardCategory";
-import CardDetail from "./CardDetail";
-import CardImage from "./CardImage";
-import CardTitle from "./CardTitle";
+import { ReactNode } from 'react'
+import CardCategory from './CardCategory'
+import CardDetail from './CardDetail'
+import CardImage from './CardImage'
+import CardTitle from './CardTitle'
 
 type CardProps = {
-  children?: ReactNode;
-};
+  children?: ReactNode
+}
 
 function Card({ children }: CardProps) {
-  return children;
+  return children
 }
 
 export default Object.assign(Card, {
@@ -17,4 +17,4 @@ export default Object.assign(Card, {
   CardTitle,
   CardDetail,
   CardCategory,
-});
+})
