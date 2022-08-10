@@ -7,9 +7,9 @@ assignees: rldnrl
 
 ---
 
-# 목표
+# ⭐️ 목표
 
-# TODO
+# ✏️ TODO
 - [ ]
 - [ ]
 - [ ]
