@@ -5,12 +5,15 @@ import type { AppType } from 'next/dist/shared/lib/utils'
 import superjson from 'superjson'
 import '../styles/globals.css'
 import Layout from '../libs/ui/Layout'
+import { UserProvider } from '@auth0/nextjs-auth0'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <UserProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </UserProvider>
   )
 }
 
