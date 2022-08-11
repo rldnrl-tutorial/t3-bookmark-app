@@ -3,17 +3,14 @@ import { createRouter } from './context'
 
 export const createProtectedRouter = () =>
   createRouter().middleware(({ ctx, next }) => {
-    if (!ctx.accessToken || !ctx.user) {
+    if (!ctx.session || !ctx.session.user) {
       throw new trpc.TRPCError({ code: 'UNAUTHORIZED' })
     }
-
-    const { accessToken, user } = ctx
 
     return next({
       ctx: {
         ...ctx,
-        accessToken,
-        user,
+        session: { ...ctx.session, user: ctx.session.user },
       },
     })
   })
