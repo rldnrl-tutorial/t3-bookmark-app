@@ -5,6 +5,8 @@ import Avatar from '../Avatar'
 const Header = () => {
   const { data: session, status } = useSession()
 
+  if (status === 'loading') return null
+
   return (
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -37,7 +39,7 @@ const Header = () => {
               <Avatar src={session.user?.image} />
             </div>
           ) : (
-            <Link href="/api/auth/login">
+            <Link href="/auth/signin">
               <a className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
                 Login
               </a>
