@@ -2290,6 +2290,11 @@ react-ssr-prepass@^1.5.0:
   resolved "https://registry.yarnpkg.com/react-ssr-prepass/-/react-ssr-prepass-1.5.0.tgz#bc4ca7fcb52365e6aea11cc254a3d1bdcbd030c5"
   integrity sha512-yFNHrlVEReVYKsLI5lF05tZoHveA5pGzjFbFJY/3pOqqjGOmMmqx83N4hIjN2n6E1AOa+eQEUxs3CgRnPmT0RQ==
 
+react-utils-component@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/react-utils-component/-/react-utils-component-1.1.13.tgz#023c75d5f7018b411bff0f19534f2315e55e838b"
+  integrity sha512-5PRGc/DJfB/Ig5wU39kRyi6m3j7YJKCZczqz4uxo0hjDhdDyQyeMSubBhhxKCkqXp7IbwfUZgqq3KVdcdVDFXw==
+
 react@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
