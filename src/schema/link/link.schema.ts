@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const linkSchema = z.object({
+export const createLinkSchema = z.object({
   title: z.string(),
   url: z.string(),
   imageUrl: z.string(),
@@ -8,4 +8,10 @@ export const linkSchema = z.object({
   description: z.string(),
 })
 
-export type LinkSchema = z.infer<typeof linkSchema>
+export const getLinkShema = z.object({
+  id: z.string(),
+})
+
+export type CreateLinkSchema = z.infer<typeof createLinkSchema>
+
+export type GetLinkShema = z.infer<typeof getLinkShema>
