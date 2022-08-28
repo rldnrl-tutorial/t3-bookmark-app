@@ -1,28 +1,38 @@
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
-import { getSession } from 'next-auth/react'
+import { GetServerSidePropsContext } from 'next'
 import toast, { Toaster } from 'react-hot-toast'
 import { useForm } from 'react-hook-form'
-import { trpc } from '../utils/trpc'
-import { type LinkSchema } from '../schema/link/link.schema'
+import { unstable_getServerSession as getServerSession } from 'next-auth'
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+import { trpc } from '../utils/trpc'
+import { type CreateLinkSchema } from '../schema/link/link.schema'
+import { authOptions } from './api/auth/[...nextauth]'
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerSession(context.req, context.res, authOptions)
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
   return {
     props: {
-      session: await getSession(ctx),
+      session,
     },
   }
 }
 
-const Admin = (
-  props: InferGetServerSidePropsType<typeof getServerSideProps>
-) => {
-  console.log(props.session)
-  const { register, handleSubmit, reset } = useForm<LinkSchema>()
+const Admin = () => {
+  const { register, handleSubmit, reset } = useForm<CreateLinkSchema>()
   const linkMutation = trpc.useMutation(['protected-link.create'], {
     onSuccess: () => reset(),
   })
 
-  const onSubmit = async (data: LinkSchema) => {
+  const onSubmit = async (data: CreateLinkSchema) => {
     const { title, url, category, description } = data
     const imageUrl = `https://via.placeholder.com/300`
     const variables = { title, url, category, description, imageUrl }
