@@ -9,9 +9,9 @@ const Header = () => {
 
   return (
     <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-wrap p-5 items-center">
         <Link href="/">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <a className="flex title-font font-medium items-center text-gray-900">
             <svg
               className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
               fill="none"
@@ -28,7 +28,7 @@ const Header = () => {
             </svg>
           </a>
         </Link>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <nav className="ml-auto flex flex-wrap items-center text-base justify-center">
           {session ? (
             <div className="flex items-center space-x-5">
               <Link href="/api/auth/logout">
