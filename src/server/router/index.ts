@@ -8,7 +8,7 @@ export const appRouter = createRouter()
   .transformer(superjson)
   .merge('link.', linkRouter)
   .merge('protected-link.', protectedLinkRouter)
-  .merge('sign-in', signinRouter)
+  .merge('sign-in.', signinRouter)
 
 // export type definition of API
 export type AppRouter = typeof appRouter
