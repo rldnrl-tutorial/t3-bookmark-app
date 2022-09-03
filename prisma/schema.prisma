@@ -46,6 +46,7 @@ model User {
     accounts      Account[]
     sessions      Session[]
     links         Link[]
+    role          Role?
 }
 
 model VerificationToken {
